@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Criket</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+	<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+	integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+	crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Courgette|Philosopher|Roboto" rel="stylesheet">
+	<script type="text/javascript" src="script.js"></script>
+
+</head>
+<body onload="onloadFunc()">
+	<div class="form animated bounceInDown">
+		<input type="Search" placeholder="Type Your Name">
+		<div>
+			<button onclick="newPageChecker()">Okay</button>
+			<button onclick="cancelForm()">Later</button>
+		</div>
+	</div>
+	<div class="form-api animated bounceInDown">
+		<p class="error-text">There is no API key yet. Because work is on under Process</p>
+		<div>
+			<button onclick="removeApiForm()">Thankyou</button>
+		</div>
+	</div>
+	<div class="absolute-massage animated flipInX">
+		<div class="cross">
+			<i class="fas fa-times" onclick="massageRemove()"></i>
+		</div>
+		<div class="Signup-para">
+			Here's the players information 
+		</div>
+
+		<div class="Signup-para">
+			Tap on option More <i class="fas fa-location-arrow animated infinite tada"></i>
+		</div>
+	</div>
+	<header class="header" id="home">
+		<header class="header-layout" id="top">
+			<div class="main-heading">
+				<h1>
+					<span class="animated bounceInDown slower">CricSpot</span>
+					<span class="status">Its all about Game..!!</span>
+				</h1>
+
+			</div>
+		</header>
+	</header>
+	<nav class=" animated fadeInRightBig faster">
+		<span class="nav-item"><a href="#home">Home</a></span>
+		
+		<span class="nav-item"><a href="#news">News</a></span>
+		<span class="nav-item"><a href="#fixture">Fixture</a></span>
+		<span class="nav-item"><a href="#ranking">Ranking</a></span>
+		<span class="nav-item-last"><a href="#more" class="more-span"><i class="fas fa-chevron-circle-down" onclick="moreInfo()"> More</i></a>
+			<div class="absolute-more">
+				<a href="#"><p class="abosulte-inner-items" onclick="signup()">Sign Up</p></a>
+				<a href="#"><p class="abosulte-inner-items" onclick="login()">Log In</p></a>
+				<a href="#" onclick="apiMassage()" ><p class="abosulte-inner-items loading-api">API</p></a>
+
+				<a href="#">
+					<p class="abosulte-inner-items load-player" onclick="formPage()">Chart
+					</p>
+				</a>
+			</div>
+		</span>
+	</nav>
+	<article class="article" id="news">
+		<br><br><br><br><br><br><br><br><br><br><br><br>
+		<h1>News
+			<span class="animated infinite pulse top-btn">
+				<a href="#top" class="animated flipInX">Top <i class="fas fa-arrow-alt-circle-up"></i></a>
+			</span>
+		</h1>
+		<div class="news-container">
+			<div class="news-sec">
+				<!-- generate on loop -->
+			</div>
+		</div>
+		<div class="readmore">
+			<a href="https://www.cricbuzz.com/cricket-news" target="blank" >READ MORE</a>
+		</div>
+	</article>
+	<br id="fixture">
+	<h1>Asia Cup Fixtures
+		<span class="animated infinite pulse top-btn">
+			<a href="#top" class="animated flipInX">Top <i class="fas fa-arrow-alt-circle-up"></i></a>
+		</span>
+	</h1>
+	<article class="fixture-sec">
+		<!-- generate on loop -->
+	</article>
+	<h1 id="ranking">Ranking
+		<span class="animated infinite pulse top-btn">
+			<a href="#top" class="animated flipInX">Top <i class="fas fa-arrow-alt-circle-up"></i></a>
+		</span>
+	</h1>
+	<section class="intro-sec">
+		<div class="sec sec-test" data-aos="fade-right">
+			<h2 class="animated pulse">Test Ranking</h2>
+		</div>
+		<div class="sec sec-odi" data-aos="fade-up">
+			<h2 class="animated pulse">ODI Ranking</h2>
+		</div>
+		<div class="sec sec-t20" data-aos="fade-left">
+			<h2 class="animated pulse">T20 Ranking</h2>
+		</div>
+	</section>
+	<footer>
+		<h1>
+			<span class="animated infinite pulse top-btn">
+				<a href="#top" class="animated flipInX">Top <i class="fas fa-arrow-alt-circle-up"></i></a>
+			</span>
+		</h1>
+		<div class="info-abaout-site">
+			<div class="footer-content-container">
+				<h3>Contact</h3>
+				<p><i class="fas fa-envelope"></i> talhaabbas69@gmail.com</p>
+				<p><i class="fab fa-github"></i> github.com/talhaahbinabbasali123456</p>
+				<p><i class="fab fa-whatsapp"></i> 03242341018</p>
+			</div>
+		</div>
+	</footer>
+</body>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="zenscroll-latest/zenscroll-min.js"></script>
+</html>

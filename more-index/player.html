@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Criket</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+	<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+	integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+	crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Courgette|Philosopher|Roboto" rel="stylesheet">
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body onload="onloadFunc()">
+	<header class="header" id="home">
+		<header class="header-layout" id="top">
+			<div class="main-heading">
+				<h1>
+					<span class="animated bounceInDown" id="top">Cricket Spot</span>
+					<span class="status">Its all about Game..!!</span>
+				</h1>
+
+			</div>
+		</header>
+	</header>
+	<nav class="animated fadeInLeftBig slower">
+		<span class="nav-item"><a href="../index.html">Home</a></span>
+		<span class="nav-item"><a href="#test">Test</a></span>
+		<span class="nav-item"><a href="#odi">ODI</a></span>
+		<span class="nav-item"><a href="#t20">T20</a></span>
+		<span class="nav-item"><a href="#info">Players Info</a></span>
+
+	</nav>
+	<br><br><br>
+	<article class="parent-container-players">
+		<div class="button-div">
+			<div class="btn1">
+				<button class="test-class animated flipInX" onclick="test()">Test Players Ranking</button>
+			</div>
+			<div class="btn2">
+				<button class="odi-class animated flipInX" onclick="odi()">ODI Players Ranking</button>
+				
+			</div>
+			<div class="btn3">
+				<button class="t20-class animated flipInX" onclick="t20()">T20 Players Ranking</button>
+				
+			</div>
+		</div>
+	</article>
+	<article class="parent">
+		<div class="graph-div-test">
+			<h1 id="test">
+				Top 5 Test Players
+				<span class="animated infinite pulse top-btn">
+					<a href="#top" class="animated flipInX">Top <i class="fas fa-arrow-alt-circle-up"></i></a>
+				</span>
+			</h1>
+			<div class="profile-container"> 
+
+			</div>
+		</div>
+		<br><br>		
+		<div class="graph-div-odi">
+			<h1 id="odi">
+				Top 5 ODI Players
+				<span class="animated infinite pulse top-btn">
+					<a href="#top" class="animated flipInX">Top <i class="fas fa-arrow-alt-circle-up"></i></a>
+				</span>
+			</h1>
+			<div class="profile-container2"> 
+
+			</div>
+		</div>
+		<br><br>
+		<div class="graph-div-t20">
+			<h1 id="t20">
+				Top 5 T20 Players
+				<span class="animated infinite pulse top-btn">
+					<a href="#top" class="animated flipInX">Top <i class="fas fa-arrow-alt-circle-up"></i></a>
+					<n/span>
+				</h1>
+				<div class="profile-container3"> 
+
+				</div>
+			</div>
+		</article>
+		<article class="players-info-container">
+			<h1 id="info">Players Information
+				<span class="animated infinite pulse top-btn">
+					<a href="#top" class="animated flipInX">Top <i class="fas fa-arrow-alt-circle-up"></i></a>
+				</span>
+			</h1>
+
+			<div class="group-players-btn">
+				<input id="player-name" type="search" placeholder="player name">
+				<button class='src-btn' onclick="searchPlayer()">Search</button>
+				<p class="pid"></p>
+				<p id="pid"></p>
+			</div>
+			<div class="profile-cont" data-aos="flip-left"
+			data-aos-easing="ease-out-cubic"
+			data-aos-duration="2000">
+
+		</div>
+		<article class="player-info-container">
+
+		</article>
+	</article>
+	<footer>
+		<h1>
+			<span class="animated infinite pulse top-btn">
+				<a href="#top" class="animated flipInX">Top <i class="fas fa-arrow-alt-circle-up"></i></a>
+			</span>
+		</h1>
+		<div class="info-abaout-site">
+			<div class="footer-content-container">
+				<h3>Contacts</h3>
+				<p><i class="fas fa-envelope"></i> talhaabbas69@gmail.com</p>
+				<p><i class="fab fa-github"></i> github.com/talhaahbinabbasali123456</p>
+				<p><i class="fab fa-whatsapp"></i> 03242341018</p>
+			</div>
+		</div>
+	</footer>
+</body>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../zenscroll-latest/zenscroll-min.js"></script>
+</html>
