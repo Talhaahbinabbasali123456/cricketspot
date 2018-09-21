@@ -1,3 +1,5 @@
+URL https://talhaahbinabbasali123456.github.io/cricketspot/
+
 There is the "API key" to access players information and news about cricket.
 with the help of "ajax", "jQuery" and  there are alot of functions also. 
 make this informative site using simple
