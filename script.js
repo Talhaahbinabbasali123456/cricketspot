@@ -102,12 +102,6 @@ function onloadFunc() {
 
 }
 
-function removeSquad() {
-	document.querySelector(".squad").innerHTML = "";
-	document.querySelector(".squad-2").innerHTML = "";
-	document.querySelector('.close').innerHTML = "";
-
-}
 function moreInfo() {
 	document.querySelector(".absolute-more").style.display = "inline-block";
 	document.querySelector(".more-span").innerHTML = `<i class="fas fa-chevron-circle-up" onclick="moreInfoClose()"> More</i>`;
