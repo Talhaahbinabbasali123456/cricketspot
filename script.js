@@ -94,62 +94,11 @@ function onloadFunc() {
 				document.querySelector(".fixture-sec").innerHTML += 
 				`<div class='fixture-div' data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
 				<p class='team-para'>${data.data[i].name}</p>
-				<p class='match-time'>${data.data[i].date}</p>
-				<input class='id' type='search' placeholder='Enter a squad code'>
-				<p class='code'>${data.data[i].unique_id}</p>
-				<p class='match-time anno-time'>Squad will announced 1-2 hour before match Time</p>
-				<button onclick='squad${[i]}()' class='btn'>Squad</button>
-				<div class='squad-container'>
-				<div>
-				<p class='squad'></p>
-				</div>
-				<div>
-				<p class='squad-2'></p>
-				</div>
-				<div>
-				<span class="close"></span>
-				</div>`;
+				<p class='match-time'>${data.data[i].date}</p>`;
 			}
 			
 		}
 	})
-
-}
-function squad0() {
-	document.querySelector(".btn").innerHTML += ` <i class="fa fa-spinner fa-spin"></i>`;
-	let code = document.querySelector(".code").innerHTML;
-	let inp = document.querySelector(".id").value = code;
-	$.ajax({
-		url : `https://cricapi.com/api/fantasySquad?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2&unique_id=${inp}`,
-		success: function(datav){
-			console.log(datav)
-			if (inp == "") {
-				alert("Enter a code"); 
-			} else {
-
-				document.querySelector (".anno-time").innerHTML = "";
-				document.querySelector(".squad").innerHTML = `<h4>${datav.squad[0].name}</h4>`;
-				document.querySelector(".squad-2").innerHTML = `<h4>${datav.squad[1].name}</h4>`; 
-
-				for (let i=0; i<16; i++) {
-					document.querySelector(".squad").innerHTML += 
-					`<p class='squad'>${datav.squad[0].players[i].name}</p>`;
-				}
-
-				for (let i=0; i<16; i++) {
-					document.querySelector(".squad-2").innerHTML += 
-					`<p class='squad'>${datav.squad[1].players[i].name}</p>`;
-
-				}
-				document.querySelector('.close').innerHTML = `<i class="fas fa-chevron-circle-up" onclick="removeSquad()"></i>`;
-
-			}
-		}
-	})
-	function removeSpin() {
-		document.querySelector(".btn").innerHTML = `Squad`;
-	}
-	setInterval(removeSpin,3000);
 
 }
 
