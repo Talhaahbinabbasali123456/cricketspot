@@ -139,7 +139,6 @@ function newPageChecker() {
 	if (userName === ""){
 		alert("enter a name");
 	} else {
-		alert("success");
 		document.querySelector('input').value = "";
 		window.location.replace("more-index/player.html");
 	}
