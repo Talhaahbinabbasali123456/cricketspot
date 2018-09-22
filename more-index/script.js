@@ -69,7 +69,7 @@ function searchPlayer() {
 	setInterval(re,5000);
 	let userPush = document.querySelector("#player-name").value;
 	$.ajax({
-		url : `http://cricapi.com/api/playerFinder?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2&name=${userPush}`,
+		url : `https://cricapi.com/api/playerFinder?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2&name=${userPush}`,
 		success: function(data){
 			console.log(data)
 			let emptyData = `${data.data}`;
@@ -80,7 +80,7 @@ function searchPlayer() {
 			}
 			let pidNumber = document.querySelector("#pid").innerHTML;
 			$.ajax({
-				url : `http://cricapi.com/api/playerStats?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2&pid=${pidNumber}`,
+				url : `https://cricapi.com/api/playerStats?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2&pid=${pidNumber}`,
 				success: function(data){
 					console.log(data)
 					let pidN = `${data.pid}`;
@@ -120,7 +120,7 @@ function onloadFunc() {
 		`;
 
 		$.ajax({
-			url : `http://cricapi.com/api/playerStats?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2&pid=${pidTest[i]}`,
+			url : `https://cricapi.com/api/playerStats?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2&pid=${pidTest[i]}`,
 			success: function(data){
 				console.log(data);
 				let domestic = data.data.batting.listA.Runs;
@@ -177,7 +177,7 @@ function onloadFunc() {
 		<canvas class='myChart${[i]}' id='myChart' data-aos="flip-up"></canvas>`;
 
 		$.ajax({
-			url : `http://cricapi.com/api/playerStats?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2&pid=${pidOdi[i]}`,
+			url : `https://cricapi.com/api/playerStats?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2&pid=${pidOdi[i]}`,
 			success: function(data){
 				console.log(data);
 				let domestic = data.data.batting.listA.Runs;
@@ -233,7 +233,7 @@ function onloadFunc() {
 		<canvas class='myyChart${[i]}' id='myChart' data-aos="flip-left"></canvas>`;
 
 		$.ajax({
-			url : `http://cricapi.com/api/playerStats?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2&pid=${pidT20[i]}`,
+			url : `https://cricapi.com/api/playerStats?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2&pid=${pidT20[i]}`,
 			success: function(data){
 				console.log(data);
 				let domestic = data.data.batting.listA.Runs;
