@@ -466,16 +466,12 @@ footer {
 	padding: 10px 2px;
 	font-family: 'Roboto', sans-serif;
 }
-.img-div {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+
 .image {
-	width: 30%;
-	min-width: 30%;
-	max-width: 30%;
-	height: 40vh;
+	width: 40%;
+	min-width: 40%;
+	max-width: 40%;
+	height: 80vh;
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -487,10 +483,13 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
 	flex-wrap: wrap;
 	padding: 20px;
 }
+.info-text {
+	width: 59%;
+}
+
 
 
 
