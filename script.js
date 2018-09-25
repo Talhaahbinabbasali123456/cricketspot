@@ -87,7 +87,7 @@ function onloadFunc() {
 	})
 
 	$.ajax({
-		url : "http://cricapi.com/api/matchCalendar?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2",
+		url : "https://cricapi.com/api/matchCalendar?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2",
 		success: function(data){
 			console.log(data)
 			for (let i=0; i<8; i++) {
@@ -119,7 +119,7 @@ function squad(p) {
 	let code = document.querySelector(`.code${p}`).innerHTML;
 	let inp = document.querySelector(`.id${p}`).value = code;
 	$.ajax({
-		url : `http://cricapi.com/api/fantasySquad?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2&unique_id=${inp}`,
+		url : `https://cricapi.com/api/fantasySquad?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2&unique_id=${inp}`,
 		success: function(datav){
 			console.log(datav)
 			if (inp == "") {
