@@ -87,21 +87,69 @@ function onloadFunc() {
 	})
 
 	$.ajax({
-		url : "https://cricapi.com/api/matchCalendar?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2",
+		url : "http://cricapi.com/api/matchCalendar?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2",
 		success: function(data){
 			console.log(data)
 			for (let i=0; i<8; i++) {
 				document.querySelector(".fixture-sec").innerHTML += 
 				`<div class='fixture-div' data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-				<p class='team-para'>${data.data[i].name}</p>
-				<p class='match-time'>${data.data[i].date}</p>`;
+					<p class='team-para'>${data.data[i].name}</p>
+					<p class='match-time'>${data.data[i].date}</p>
+					<input class='id${i} id' type='search' placeholder='Enter a squad code'>
+					<p class='code${i}'>${data.data[i].unique_id}</p>
+					<button onclick='squad(${i})' class='btn${i}'>Squad</button>
+					<div class='squad-container'>
+						<div>
+							<p class='s${i}'></p>
+						</div>
+					<div>
+					<p class='ss${i}'></p>
+				</div>
+				<div>
+					<span class="close"></span>
+				</div>`;
 			}
 			
 		}
 	})
 
 }
+function squad(p) {
+	document.querySelector(`.btn${p}`).innerHTML += ` <i class="fa fa-spinner fa-spin"></i>`;
+	let code = document.querySelector(`.code${p}`).innerHTML;
+	let inp = document.querySelector(`.id${p}`).value = code;
+	$.ajax({
+		url : `http://cricapi.com/api/fantasySquad?apikey=wd8xbtSzwMWjks9e0K6hR8cMmDE2&unique_id=${inp}`,
+		success: function(datav){
+			console.log(datav)
+			if (inp == "") {
+				alert("Enter a code"); 
+			} else {
 
+				document.querySelector(`.s${p}`).innerHTML = `<h4>${datav.squad[0].name}</h4>`;
+				document.querySelector(`.ss${p}`).innerHTML = `<h4>${datav.squad[1].name}</h4>`; 
+
+				for (let i=0; i<16; i++) {
+					document.querySelector(`.s${p}`).innerHTML += 
+					`<p class='squad'>${datav.squad[0].players[i].name}</p>`;
+				}
+
+				for (let i=0; i<16; i++) {
+					document.querySelector(`.ss${p}`).innerHTML += 
+					`<p class='squad'>${datav.squad[1].players[i].name}</p>`;
+
+				}
+				document.querySelector('.close').innerHTML = `<i class="fas fa-chevron-circle-up" onclick="removeSquad()"></i>`;
+
+			}
+		}
+	})
+	function removeSpin() {
+		document.querySelector(`.btn${p}`).innerHTML = `Squad`;
+	}
+	setInterval(removeSpin,3000);
+
+}
 function moreInfo() {
 	document.querySelector(".absolute-more").style.display = "inline-block";
 	document.querySelector(".more-span").innerHTML = `<i class="fas fa-chevron-circle-up" onclick="moreInfoClose()"> More</i>`;
